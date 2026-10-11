@@ -2,12 +2,13 @@ extends Node
 
 #var has_key: bool = false
 
+var ManaCrystals: int
 
 var inventory: Array[String]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	ManaCrystals = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
