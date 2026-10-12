@@ -14,6 +14,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Body enters world boundary")
-	if player:
-		player.global_position = $Control.global_position
+	$"../player".global_position = $Control.global_position
 		
