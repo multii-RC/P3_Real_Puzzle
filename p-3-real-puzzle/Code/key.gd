@@ -15,6 +15,8 @@ func _on_body_entered(body: Node2D) -> void:
 	print("key collected")
 	#GameManager.has_key = true
 	
-	GameManager.inventory.append(name)
+	#GameManager.inventory.append(name)
+	
+	GameManager.ManaCrystals += 1
 	
 	queue_free()

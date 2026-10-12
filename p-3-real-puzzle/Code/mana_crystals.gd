@@ -1,6 +1,6 @@
 extends Label
 
-@onready var ManaCrystalsLabel: Label = $"."
+@onready var manaCrystalsLabel: Label = $"."
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,4 +10,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	ManaCrystalsLabel.text = "Mana Crystals: " + str(GameManager.ManaCrystals)
+	manaCrystalsLabel.text = "Mana Crystals: " + str(GameManager.ManaCrystals)

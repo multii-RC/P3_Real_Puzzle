@@ -14,16 +14,21 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("player entered")
 	
+	if GameManager.ManaCrystals >= 2: 
+		queue_free()
+		$"../Door".queue_free()
+	else:
+		print("Not Enough Mana Crystals")
+		return
 	
-	for item in ["BlueKey", "RedKey"]:
-		print("Checking" + item)
-		if (item not in GameManager.inventory):
-			print(item + "not in inventory, end execution")
-			return
-		else: 
-			print(item + "in inventory")
+	#for item in ["BlueKey", "RedKey"]:
+		#print("Checking" + item)
+		#if (item not in GameManager.inventory):
+			#print(item + "not in inventory, end execution")
+			#return
+		#else: 
+			#print(item + "in inventory")
 			
 			
-	queue_free()
-	$"../Door".queue_free()
+	
 	
