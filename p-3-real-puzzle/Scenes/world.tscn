@@ -6,9 +6,11 @@
 [ext_resource type="Script" uid="uid://bdf73mrht5qgp" path="res://Code/trigger_zone.gd" id="4_k7acu"]
 [ext_resource type="Script" uid="uid://dhjjp5y4dcojl" path="res://Code/key.gd" id="5_5v1tr"]
 [ext_resource type="Script" uid="uid://c5nis6a3xadjw" path="res://Code/mana_crystals.gd" id="6_5ukr8"]
-[ext_resource type="Script" uid="uid://cpatehj6ndhms" path="res://Scenes/dialogue.gd" id="7_o06y3"]
+[ext_resource type="PackedScene" uid="uid://cdva7gb5nyn8k" path="res://Scenes/dialog.tscn" id="7_o06y3"]
+[ext_resource type="Script" uid="uid://b017c82frwa41" path="res://Scenes/reset.gd" id="8_k7acu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmvex"]
+size = Vector2(18, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtuhs"]
 size = Vector2(245.5, 63)
@@ -276,9 +278,11 @@ texture = ExtResource("3_o06y3")
 23:15/0 = 0
 24:15/0 = 0
 1:16/0 = 0
+1:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 0.19819069, 0, -8, 8)
 2:16/0 = 0
 3:16/0 = 0
 4:16/0 = 0
+4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 0.099095345, 0.594574)
 6:16/0 = 0
 7:16/0 = 0
 8:16/0 = 0
@@ -471,6 +475,7 @@ texture = ExtResource("3_o06y3")
 6:25/0 = 0
 8:25/0 = 0
 9:25/0 = 0
+9:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:25/0 = 0
 11:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:25/0 = 0
@@ -590,8 +595,11 @@ texture = ExtResource("3_o06y3")
 13:32/0 = 0
 15:32/0 = 0
 16:32/0 = 0
+16:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:32/0 = 0
+17:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:32/0 = 0
+18:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:32/0 = 0
 20:32/0 = 0
 21:32/0 = 0
@@ -612,8 +620,10 @@ texture = ExtResource("3_o06y3")
 14:33/0 = 0
 15:33/0 = 0
 16:33/0 = 0
+16:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:33/0 = 0
 18:33/0 = 0
+18:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:33/0 = 0
 20:33/0 = 0
 21:33/0 = 0
@@ -1192,7 +1202,8 @@ size = Vector2(10.75, 114.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmvex"]
 radius = 6.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia1gg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7acu"]
+size = Vector2(102.29999, 11.9)
 
 [node name="World" type="Node2D" unique_id=848515882]
 
@@ -1228,7 +1239,7 @@ shape = SubResource("RectangleShape2D_mtuhs")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=54550132]
 visibility_layer = 15
-tile_map_data = PackedByteArray("AAD6/wQAAAADACAAAAD7/wQAAAAFACIAAAD8/wQAAAAFACIAAAD9/wQAAAAFACIAAAD+/wQAAAAFACIAAAD//wQAAAAFACIAAAAAAAQAAAAFACIAAAABAAQAAAAFACIAAAACAAQAAAAFACIAAAADAAQAAAAFACIAAAAEAAQAAAAFACIAAAAFAAQAAAAFACIAAAAGAAQAAAAFACIAAAAHAAQAAAAFACIAAAAIAAQAAAAFACIAAAAJAAQAAAAEACAAAAD6/wUAAAADACEAAAD6/wYAAAADACEAAAD6/wcAAAADACEAAAD7/wcAAAARACUAAAD8/wcAAAARACUAAAD9/wcAAAARACUAAAD+/wcAAAARACUAAAD//wcAAAARACUAAAAAAAcAAAARACUAAAABAAcAAAARACUAAAACAAcAAAARACUAAAADAAcAAAARACUAAAAEAAcAAAARACUAAAAFAAcAAAARACUAAAAGAAcAAAARACUAAAAHAAcAAAARACUAAAAIAAcAAAARACUAAAAIAAYAAAARACUAAAAIAAUAAAARACUAAAAJAAUAAAAEACEAAAAJAAYAAAAEACEAAAAJAAcAAAAEACEAAAAHAAYAAAARACUAAAAGAAYAAAARACUAAAAFAAUAAAARACUAAAAEAAYAAAARACUAAAADAAYAAAARACUAAAACAAYAAAARACUAAAABAAYAAAARACUAAAAAAAYAAAARACUAAAD//wYAAAARACUAAAD+/wYAAAARACUAAAD9/wYAAAARACUAAAD8/wYAAAARACUAAAD7/wYAAAARACUAAAD7/wUAAAARACUAAAD8/wUAAAARACUAAAD9/wUAAAARACUAAAD+/wUAAAARACUAAAD//wUAAAARACUAAAAAAAUAAAARACUAAAABAAUAAAARACUAAAACAAUAAAARACUAAAADAAUAAAARACUAAAAEAAUAAAARACUAAAAGAAUAAAARACUAAAAHAAUAAAARACUAAAAFAAYAAAARACUAAAD2/wIAAAABABcAAAD2/wMAAAABABgAAAD2/wQAAAABABkAAAD2/wUAAAABABoAAAD2/wYAAAABABsAAAD3/wIAAAACABcAAAD3/wMAAAACABgAAAD3/wQAAAACABkAAAD3/wUAAAACABoAAAD3/wYAAAACABsAAAD4/wIAAAADABcAAAD4/wMAAAADABgAAAD4/wQAAAADABkAAAD4/wUAAAADABoAAAD4/wYAAAADABsAAADy//7/AAABABcAAADy////AAABABgAAADy/wAAAAABABkAAADy/wEAAAABABoAAADy/wIAAAABABsAAADz//7/AAACABcAAADz////AAACABgAAADz/wAAAAACABkAAADz/wEAAAACABoAAADz/wIAAAACABsAAAD0//7/AAADABcAAAD0////AAADABgAAAD0/wAAAAADABkAAAD0/wEAAAADABoAAAD0/wIAAAADABsAAAD6//z/AAABABcAAAD6//3/AAABABgAAAD6//7/AAABABkAAAD6////AAABABoAAAD6/wAAAAABABsAAAD7//z/AAACABcAAAD7//3/AAACABgAAAD7//7/AAACABkAAAD7////AAACABoAAAD7/wAAAAACABsAAAD8//z/AAADABcAAAD8//3/AAADABgAAAD8//7/AAADABkAAAD8////AAADABoAAAD8/wAAAAADABsAAAAAAPn/AAABABcAAAAAAPr/AAABABgAAAAAAPv/AAABABkAAAAAAPz/AAABABoAAAAAAP3/AAABABsAAAABAPn/AAACABcAAAABAPr/AAACABgAAAABAPv/AAACABkAAAABAPz/AAACABoAAAABAP3/AAACABsAAAACAPn/AAADABcAAAACAPr/AAADABgAAAACAPv/AAADABkAAAACAPz/AAADABoAAAACAP3/AAADABsAAAAFAPX/AAABABcAAAAFAPb/AAABABgAAAAFAPf/AAABABkAAAAFAPj/AAABABoAAAAFAPn/AAABABsAAAAGAPX/AAACABcAAAAGAPb/AAACABgAAAAGAPf/AAACABkAAAAGAPj/AAACABoAAAAGAPn/AAACABsAAAAHAPX/AAADABcAAAAHAPb/AAADABgAAAAHAPf/AAADABkAAAAHAPj/AAADABoAAAAHAPn/AAADABsAAAA=")
+tile_map_data = PackedByteArray("AAD6/wQAAAADACAAAAD7/wQAAAAFACIAAAD8/wQAAAAFACIAAAD9/wQAAAAFACIAAAD+/wQAAAAFACIAAAD//wQAAAAFACIAAAAAAAQAAAAFACIAAAABAAQAAAAFACIAAAACAAQAAAAFACIAAAADAAQAAAAFACIAAAAEAAQAAAAFACIAAAAFAAQAAAAFACIAAAAGAAQAAAAFACIAAAAHAAQAAAAFACIAAAAIAAQAAAAFACIAAAAJAAQAAAAEACAAAAD6/wUAAAADACEAAAD6/wYAAAADACEAAAD6/wcAAAADACEAAAD7/wcAAAARACUAAAD8/wcAAAARACUAAAD9/wcAAAARACUAAAD+/wcAAAARACUAAAD//wcAAAARACUAAAAAAAcAAAARACUAAAABAAcAAAARACUAAAACAAcAAAARACUAAAADAAcAAAARACUAAAAEAAcAAAARACUAAAAFAAcAAAARACUAAAAGAAcAAAARACUAAAAHAAcAAAARACUAAAAIAAcAAAARACUAAAAIAAYAAAARACUAAAAIAAUAAAARACUAAAAJAAUAAAAEACEAAAAJAAYAAAAEACEAAAAJAAcAAAAEACEAAAAHAAYAAAARACUAAAAGAAYAAAARACUAAAAFAAUAAAARACUAAAAEAAYAAAARACUAAAADAAYAAAARACUAAAACAAYAAAARACUAAAABAAYAAAARACUAAAAAAAYAAAARACUAAAD//wYAAAARACUAAAD+/wYAAAARACUAAAD9/wYAAAARACUAAAD8/wYAAAARACUAAAD7/wYAAAARACUAAAD7/wUAAAARACUAAAD8/wUAAAARACUAAAD9/wUAAAARACUAAAD+/wUAAAARACUAAAD//wUAAAARACUAAAAAAAUAAAARACUAAAABAAUAAAARACUAAAACAAUAAAARACUAAAADAAUAAAARACUAAAAEAAUAAAARACUAAAAGAAUAAAARACUAAAAHAAUAAAARACUAAAAFAAYAAAARACUAAAD2/wIAAAABABcAAAD2/wMAAAABABgAAAD2/wQAAAABABkAAAD2/wUAAAABABoAAAD2/wYAAAABABsAAAD3/wIAAAACABcAAAD3/wMAAAACABgAAAD3/wQAAAACABkAAAD3/wUAAAACABoAAAD3/wYAAAACABsAAAD4/wIAAAADABcAAAD4/wMAAAADABgAAAD4/wQAAAADABkAAAD4/wUAAAADABoAAAD4/wYAAAADABsAAADy//7/AAABABcAAADy////AAABABgAAADy/wAAAAABABkAAADy/wEAAAABABoAAADy/wIAAAABABsAAADz//7/AAACABcAAADz////AAACABgAAADz/wAAAAACABkAAADz/wEAAAACABoAAADz/wIAAAACABsAAAD0//7/AAADABcAAAD0////AAADABgAAAD0/wAAAAADABkAAAD0/wEAAAADABoAAAD0/wIAAAADABsAAAD6//z/AAABABcAAAD6//3/AAABABgAAAD6//7/AAABABkAAAD6////AAABABoAAAD6/wAAAAABABsAAAD7//z/AAACABcAAAD7//3/AAACABgAAAD7//7/AAACABkAAAD7////AAACABoAAAD7/wAAAAACABsAAAD8//z/AAADABcAAAD8//3/AAADABgAAAD8//7/AAADABkAAAD8////AAADABoAAAD8/wAAAAADABsAAAAAAPn/AAABABcAAAAAAPr/AAABABgAAAAAAPv/AAABABkAAAAAAPz/AAABABoAAAAAAP3/AAABABsAAAABAPn/AAACABcAAAABAPr/AAACABgAAAABAPv/AAACABkAAAABAPz/AAACABoAAAABAP3/AAACABsAAAACAPn/AAADABcAAAACAPr/AAADABgAAAACAPv/AAADABkAAAACAPz/AAADABoAAAACAP3/AAADABsAAAAFAPX/AAABABcAAAAFAPb/AAABABgAAAAFAPf/AAABABkAAAAFAPj/AAABABoAAAAFAPn/AAABABsAAAAGAPX/AAACABcAAAAGAPb/AAACABgAAAAGAPf/AAACABkAAAAGAPj/AAACABoAAAAGAPn/AAACABsAAAAHAPX/AAADABcAAAAHAPb/AAADABgAAAAHAPf/AAADABkAAAAHAPj/AAADABoAAAAHAPn/AAADABsAAADw//n/AAAPACAAAADw//r/AAAPACEAAADx//n/AAAQACAAAADx//r/AAABABAAAADy//n/AAARACAAAADy//r/AAAXABMAAADz//n/AAASACAAAADz//r/AAAEABAAAAD0//n/AAATACAAAAD0//r/AAATACEAAAA=")
 tile_set = SubResource("TileSet_nmvex")
 
 [node name="TriggerZone" type="Area2D" parent="." unique_id=115678559]
@@ -1253,11 +1264,11 @@ collision_mask = 2
 script = ExtResource("5_5v1tr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueKey" unique_id=17441476]
-position = Vector2(23, 41)
+position = Vector2(104, -191)
 shape = SubResource("CircleShape2D_nmvex")
 
 [node name="RedKey" type="Area2D" parent="." unique_id=529048489]
-position = Vector2(-37, 38)
+position = Vector2(-214, -93)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("5_5v1tr")
@@ -1266,18 +1277,27 @@ script = ExtResource("5_5v1tr")
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_nmvex")
 
-[node name="Dialogue" type="Area2D" parent="." unique_id=574841825]
-script = ExtResource("7_o06y3")
+[node name="Dialog" parent="." unique_id=389799286 instance=ExtResource("7_o06y3")]
+position = Vector2(74, 48)
+dialog = Array[String](["Welcome to the world of death and destruction.", "You will need to collect Mana Crystals to do various things here.", "The first of which will be opening this door here.", "Go find tw Mana Crystals and come back here to move on."])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue" unique_id=696784198]
-position = Vector2(76, 46)
-shape = SubResource("RectangleShape2D_ia1gg")
+[node name="Reset" type="Area2D" parent="." unique_id=1830567698]
+collision_mask = 2
+script = ExtResource("8_k7acu")
 
-[node name="DBox" type="Label" parent="Dialogue" unique_id=824541760]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reset" unique_id=1747140663]
+position = Vector2(-124.499985, 241.5)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_k7acu")
+
+[node name="Control" type="Control" parent="Reset" unique_id=661326283]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 3.0517578e-05
+offset_right = 39.999992
+offset_bottom = 40.00003
 
 [connection signal="body_entered" from="TriggerZone" to="TriggerZone" method="_on_body_entered"]
 [connection signal="body_entered" from="BlueKey" to="BlueKey" method="_on_body_entered"]
 [connection signal="body_entered" from="RedKey" to="RedKey" method="_on_body_entered"]
-[connection signal="body_entered" from="Dialogue" to="Dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="Reset" to="Reset" method="_on_body_entered"]

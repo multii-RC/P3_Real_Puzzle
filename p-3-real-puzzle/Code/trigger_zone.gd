@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("player entered")
 	
-	if GameManager.ManaCrystals >= 2: 
+	if GameManager.manaCrystals >= 2: 
 		queue_free()
 		$"../Door".queue_free()
 	else:
