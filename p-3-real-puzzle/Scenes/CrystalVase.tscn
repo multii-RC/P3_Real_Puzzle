@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6cufy50rpw58"]
 
 [ext_resource type="Script" uid="uid://kkl8fgl2ss08" path="res://Code/area_2d.gd" id="1_sqnkd"]
+[ext_resource type="Texture2D" uid="uid://bjgvr5edfsfa3" path="res://Rusty Crate.png" id="2_id7js"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nmvex"]
 
@@ -14,6 +15,14 @@ script = ExtResource("1_sqnkd")
 shape = SubResource("CapsuleShape2D_nmvex")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=819547502]
+texture = ExtResource("2_id7js")
+
+[node name="Label" type="Label" parent="Area2D" unique_id=409393725]
+offset_left = -86.0
+offset_top = -56.0
+offset_right = 97.0
+offset_bottom = -33.0
+text = "Try pressing \"E\" on this."
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

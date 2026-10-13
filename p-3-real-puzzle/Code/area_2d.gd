@@ -2,9 +2,10 @@ extends Area2D
 
 var isInteractable = false
 
+@onready var vaseLabel: Label = $Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	vaseLabel.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,7 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	isInteractable = true
-	
+	vaseLabel.visible = true
 		
 func _input(event: InputEvent) -> void:
 	# Skip if not interactable or not visible

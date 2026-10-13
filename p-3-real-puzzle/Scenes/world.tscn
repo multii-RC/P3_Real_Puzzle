@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bmj5v28f28oqh" path="res://door.png" id="6_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://cdva7gb5nyn8k" path="res://Scenes/dialog.tscn" id="7_o06y3"]
 [ext_resource type="Script" uid="uid://b017c82frwa41" path="res://Code/reset.gd" id="8_k7acu"]
+[ext_resource type="PackedScene" uid="uid://c6cufy50rpw58" path="res://Scenes/CrystalVase.tscn" id="10_0fj1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmvex"]
 size = Vector2(18, 20)
@@ -1310,6 +1311,9 @@ anchors_preset = 0
 offset_top = 3.0517578e-05
 offset_right = 39.999992
 offset_bottom = 40.00003
+
+[node name="CrystalVase" parent="." unique_id=100340872 instance=ExtResource("10_0fj1v")]
+position = Vector2(-226, -126)
 
 [connection signal="body_entered" from="TriggerZone" to="TriggerZone" method="_on_body_entered"]
 [connection signal="body_exited" from="TriggerZone" to="TriggerZone" method="_on_body_exited"]
