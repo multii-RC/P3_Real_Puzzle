@@ -7,7 +7,7 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	doorLabel.visible = false
-
+	doorLabel.text = "You need " + str(doorCost) + " Crystals!"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,12 +17,12 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("player entered")
 	
-	if GameManager.manaCrystals >= 3:
+	if GameManager.manaCrystals >= doorCost:
 		queue_free()
-		$"..".queue_free()
-		GameManager.manaCrystals -= 3
+		$Door.queue_free()
+		GameManager.manaCrystals -= doorCost
 	else:
-		print("Not Enough Mana Crystals, you need" + str(doorCost))
+		print("Not Enough Mana Crystals, you need " + str(doorCost))
 		doorLabel.visible = true
 		return
 	

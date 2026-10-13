@@ -3,39 +3,38 @@
 [ext_resource type="Texture2D" uid="uid://bmj5v28f28oqh" path="res://Assets/door.png" id="1_p0e35"]
 [ext_resource type="Script" uid="uid://bdf73mrht5qgp" path="res://Code/trigger_zone.gd" id="2_fahql"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlfv"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
 size = Vector2(10.75, 114.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlfv"]
-
-[node name="Door" type="StaticBody2D" unique_id=134421877]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1407084845]
-position = Vector2(123.625, 5)
-shape = SubResource("RectangleShape2D_aqk2v")
-
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=2012723194]
-position = Vector2(5.375, 19.5)
-scale = Vector2(0.75, 1.171875)
-texture = ExtResource("1_p0e35")
-
-[node name="TriggerZone" type="Area2D" parent="." unique_id=531658417]
+[node name="TriggerZone" type="Area2D" unique_id=531658417]
 position = Vector2(124, 7)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("2_fahql")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerZone" unique_id=852274593]
-position = Vector2(-28, 43)
-shape = SubResource("RectangleShape2D_8rlfv")
-
-[node name="Label" type="Label" parent="TriggerZone" unique_id=700974852]
+[node name="Label" type="Label" parent="." unique_id=700974852]
 offset_left = -77.0
 offset_top = 73.0
 offset_right = 84.0
 offset_bottom = 96.0
-text = "Not Enough Crystals!"
 
-[connection signal="body_entered" from="TriggerZone" to="TriggerZone" method="_on_body_entered"]
-[connection signal="body_exited" from="TriggerZone" to="TriggerZone" method="_on_body_exited"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=852274593]
+position = Vector2(-28, 43)
+shape = SubResource("RectangleShape2D_8rlfv")
+
+[node name="Door" type="StaticBody2D" parent="." unique_id=134421877]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1407084845]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door/CollisionShape2D" unique_id=2012723194]
+position = Vector2(7, 19)
+scale = Vector2(0.75, 1.171875)
+texture = ExtResource("1_p0e35")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
