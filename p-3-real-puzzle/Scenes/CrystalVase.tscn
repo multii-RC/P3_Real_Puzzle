@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c6cufy50rpw58"]
+
+[ext_resource type="Script" uid="uid://kkl8fgl2ss08" path="res://Code/area_2d.gd" id="1_sqnkd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nmvex"]
+
+[node name="CrystalVase" type="Node2D" unique_id=100340872]
+position = Vector2(1, 0)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=82264156]
+script = ExtResource("1_sqnkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=626813775]
+shape = SubResource("CapsuleShape2D_nmvex")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=819547502]
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

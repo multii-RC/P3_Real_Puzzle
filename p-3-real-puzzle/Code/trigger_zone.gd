@@ -1,9 +1,9 @@
 extends Area2D
 
-
+@onready var doorLabel: Label = $Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	doorLabel.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 		$"../Door".queue_free()
 	else:
 		print("Not Enough Mana Crystals")
+		doorLabel.visible = true
 		return
 	
 	#for item in ["BlueKey", "RedKey"]:
@@ -30,5 +31,5 @@ func _on_body_entered(body: Node2D) -> void:
 			#print(item + "in inventory")
 			
 			
-	
-	
+func _on_body_exited(body: Node2D) -> void:
+	doorLabel.visible = false

@@ -17,6 +17,6 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	#GameManager.inventory.append(name)
 	
-	GameManager.ManaCrystals += 1
+	GameManager.manaCrystals += 1
 	
 	queue_free()

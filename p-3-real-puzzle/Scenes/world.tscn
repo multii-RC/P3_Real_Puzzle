@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://bdf73mrht5qgp" path="res://Code/trigger_zone.gd" id="4_k7acu"]
 [ext_resource type="Script" uid="uid://dhjjp5y4dcojl" path="res://Code/key.gd" id="5_5v1tr"]
 [ext_resource type="Script" uid="uid://c5nis6a3xadjw" path="res://Code/mana_crystals.gd" id="6_5ukr8"]
+[ext_resource type="Texture2D" uid="uid://bmj5v28f28oqh" path="res://door.png" id="6_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://cdva7gb5nyn8k" path="res://Scenes/dialog.tscn" id="7_o06y3"]
-[ext_resource type="Script" uid="uid://b017c82frwa41" path="res://Scenes/reset.gd" id="8_k7acu"]
+[ext_resource type="Script" uid="uid://b017c82frwa41" path="res://Code/reset.gd" id="8_k7acu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmvex"]
 size = Vector2(18, 20)
@@ -1223,6 +1224,7 @@ texture = ExtResource("2_5ukr8")
 zoom = Vector2(3, 3)
 
 [node name="ManaCrystals" type="Label" parent="player/Camera2D" unique_id=298330414]
+z_index = 1
 offset_left = -187.0
 offset_top = -106.0
 offset_right = -73.0
@@ -1251,12 +1253,24 @@ script = ExtResource("4_k7acu")
 position = Vector2(104, 46)
 shape = SubResource("RectangleShape2D_8rlfv")
 
+[node name="Label" type="Label" parent="TriggerZone" unique_id=218269740]
+offset_left = 73.0
+offset_top = 73.0
+offset_right = 117.0
+offset_bottom = 96.0
+text = "Not Enough Crystals!"
+
 [node name="Door" type="StaticBody2D" parent="." unique_id=621194733]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1849838436]
 position = Vector2(123.625, 5)
 shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door/CollisionShape2D" unique_id=1422988123]
+position = Vector2(5.375, 19.5)
+scale = Vector2(0.75, 1.171875)
+texture = ExtResource("6_5v1tr")
 
 [node name="BlueKey" type="Area2D" parent="." unique_id=651898090]
 collision_layer = 8
@@ -1278,8 +1292,8 @@ position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_nmvex")
 
 [node name="Dialog" parent="." unique_id=389799286 instance=ExtResource("7_o06y3")]
-position = Vector2(74, 48)
-dialog = Array[String](["Welcome to the world of death and destruction.", "You will need to collect Mana Crystals to do various things here.", "The first of which will be opening this door here.", "Go find tw Mana Crystals and come back here to move on."])
+position = Vector2(35, 51)
+dialog = Array[String](["Welcome to the world of death and destruction.", "You will need to collect Mana Crystals to do various things here.", "The first of which will be opening this door here.", "Go find TWO Mana Crystals and come back here to move on.", "I've heard that they can be found in high places in this area.", "Or stuck to the bottom of platforms."])
 
 [node name="Reset" type="Area2D" parent="." unique_id=1830567698]
 collision_mask = 2
@@ -1298,6 +1312,7 @@ offset_right = 39.999992
 offset_bottom = 40.00003
 
 [connection signal="body_entered" from="TriggerZone" to="TriggerZone" method="_on_body_entered"]
+[connection signal="body_exited" from="TriggerZone" to="TriggerZone" method="_on_body_exited"]
 [connection signal="body_entered" from="BlueKey" to="BlueKey" method="_on_body_entered"]
 [connection signal="body_entered" from="RedKey" to="RedKey" method="_on_body_entered"]
 [connection signal="body_entered" from="Reset" to="Reset" method="_on_body_entered"]
