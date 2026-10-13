@@ -3,16 +3,19 @@
 [ext_resource type="Script" uid="uid://kkl8fgl2ss08" path="res://Code/area_2d.gd" id="1_sqnkd"]
 [ext_resource type="Texture2D" uid="uid://bjgvr5edfsfa3" path="res://Rusty Crate.png" id="2_id7js"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nmvex"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_id7js"]
+size = Vector2(30, 30)
 
 [node name="CrystalVase" type="Node2D" unique_id=100340872]
 position = Vector2(1, 0)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=82264156]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_sqnkd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=626813775]
-shape = SubResource("CapsuleShape2D_nmvex")
+shape = SubResource("RectangleShape2D_id7js")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=819547502]
 texture = ExtResource("2_id7js")

@@ -24,7 +24,8 @@ func _input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("Interact"):
 		GameManager.manaCrystals += 1
-		
+		queue_free()
 		
 func _on_body_exited(body: Node2D) -> void:
 	isInteractable = false
+	vaseLabel.visible = false
