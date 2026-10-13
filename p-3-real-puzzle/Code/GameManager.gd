@@ -4,6 +4,7 @@ extends Node
 
 @onready var player: CharacterBody2D = $player
 
+
 var manaCrystals: int
 
 var inventory: Array[String]

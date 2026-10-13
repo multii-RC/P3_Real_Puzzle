@@ -17,12 +17,12 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("player entered")
 	
-	if GameManager.manaCrystals >= 3: 
+	if GameManager.manaCrystals >= 3:
 		queue_free()
 		$"..".queue_free()
 		GameManager.manaCrystals -= 3
 	else:
-		print("Not Enough Mana Crystals")
+		print("Not Enough Mana Crystals, you need" + str(doorCost))
 		doorLabel.visible = true
 		return
 	
