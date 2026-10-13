@@ -1230,6 +1230,7 @@ tile_map_data = PackedByteArray("AAD2/wIAAAABABcAAAD2/wMAAAABABgAAAD2/wQAAAABABk
 tile_set = SubResource("TileSet_nmvex")
 
 [node name="Door" parent="." unique_id=134421877 instance=ExtResource("5_5v1tr")]
+position = Vector2(153, 6)
 doorCost = 3
 
 [node name="ManaCrystal" parent="." unique_id=521529511 instance=ExtResource("7_0fj1v")]
