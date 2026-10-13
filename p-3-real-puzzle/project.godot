@@ -13,7 +13,7 @@ config_version=5
 config/name="P3_Real_Puzzle"
 run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 

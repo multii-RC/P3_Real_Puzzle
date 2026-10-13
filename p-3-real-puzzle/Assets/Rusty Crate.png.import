@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmj5v28f28oqh"
-path="res://.godot/imported/door.png-4ad4ab0c545155655bbef277d86eb152.ctex"
+uid="uid://bjgvr5edfsfa3"
+path="res://.godot/imported/Rusty Crate.png-e022391ae7b04630125c2695b6e2c288.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://door.png"
-dest_files=["res://.godot/imported/door.png-4ad4ab0c545155655bbef277d86eb152.ctex"]
+source_file="res://Assets/Rusty Crate.png"
+dest_files=["res://.godot/imported/Rusty Crate.png-e022391ae7b04630125c2695b6e2c288.ctex"]
 
 [params]
 
