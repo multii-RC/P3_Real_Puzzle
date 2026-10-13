@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bknslohhg1phg" path="res://Assets/icon.svg" id="2_5ukr8"]
 [ext_resource type="Texture2D" uid="uid://bs0qpl23v3cg3" path="res://Assets/Ground_rocks.png" id="3_o06y3"]
 [ext_resource type="Script" uid="uid://bdf73mrht5qgp" path="res://Code/trigger_zone.gd" id="4_k7acu"]
-[ext_resource type="Script" uid="uid://dhjjp5y4dcojl" path="res://Code/key.gd" id="5_5v1tr"]
 [ext_resource type="Script" uid="uid://c5nis6a3xadjw" path="res://Code/mana_crystals.gd" id="6_5ukr8"]
 [ext_resource type="Texture2D" uid="uid://bmj5v28f28oqh" path="res://Assets/door.png" id="6_5v1tr"]
+[ext_resource type="PackedScene" uid="uid://c3wlxtyq631js" path="res://Scenes/mana_crystal.tscn" id="7_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://cdva7gb5nyn8k" path="res://Scenes/dialog.tscn" id="7_o06y3"]
 [ext_resource type="Script" uid="uid://b017c82frwa41" path="res://Code/reset.gd" id="8_k7acu"]
 [ext_resource type="PackedScene" uid="uid://c6cufy50rpw58" path="res://Scenes/CrystalVase.tscn" id="10_0fj1v"]
@@ -1204,9 +1204,6 @@ sources/0 = SubResource("TileSetAtlasSource_aqk2v")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
 size = Vector2(10.75, 114.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nmvex"]
-radius = 6.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7acu"]
 size = Vector2(1000, 11.9)
 
@@ -1269,24 +1266,13 @@ position = Vector2(5.375, 19.5)
 scale = Vector2(0.75, 1.171875)
 texture = ExtResource("6_5v1tr")
 
-[node name="BlueKey" type="Area2D" parent="." unique_id=651898090]
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("5_5v1tr")
+[node name="ManaCrystal" parent="." unique_id=521529511 instance=ExtResource("7_0fj1v")]
+z_index = 2
+position = Vector2(105, -187)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueKey" unique_id=17441476]
-position = Vector2(104, -191)
-shape = SubResource("CircleShape2D_nmvex")
-
-[node name="RedKey" type="Area2D" parent="." unique_id=529048489]
-position = Vector2(-214, -93)
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("5_5v1tr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedKey" unique_id=1697931357]
-position = Vector2(-1, 0)
-shape = SubResource("CircleShape2D_nmvex")
+[node name="ManaCrystal2" parent="." unique_id=1679509328 instance=ExtResource("7_0fj1v")]
+z_index = 2
+position = Vector2(-216, -94)
 
 [node name="Dialog" parent="." unique_id=389799286 instance=ExtResource("7_o06y3")]
 position = Vector2(35, 51)
@@ -1302,6 +1288,7 @@ scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_k7acu")
 
 [node name="Marker2D" type="Marker2D" parent="Reset" unique_id=587185077]
+z_index = -1
 position = Vector2(-2, 0)
 
 [node name="CrystalVase" parent="." unique_id=100340872 instance=ExtResource("10_0fj1v")]
@@ -1309,6 +1296,4 @@ position = Vector2(-226, -126)
 
 [connection signal="body_entered" from="TriggerZone" to="TriggerZone" method="_on_body_entered"]
 [connection signal="body_exited" from="TriggerZone" to="TriggerZone" method="_on_body_exited"]
-[connection signal="body_entered" from="BlueKey" to="BlueKey" method="_on_body_entered"]
-[connection signal="body_entered" from="RedKey" to="RedKey" method="_on_body_entered"]
 [connection signal="body_entered" from="Reset" to="Reset" method="_on_body_entered"]
