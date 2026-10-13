@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bmj5v28f28oqh" path="res://Assets/door.png" id="6_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://c3wlxtyq631js" path="res://Scenes/mana_crystal.tscn" id="7_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://cdva7gb5nyn8k" path="res://Scenes/dialog.tscn" id="7_o06y3"]
-[ext_resource type="Script" uid="uid://b017c82frwa41" path="res://Code/reset.gd" id="8_k7acu"]
+[ext_resource type="PackedScene" uid="uid://r6e8x3riugpb" path="res://Scenes/reset.tscn" id="9_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://c6cufy50rpw58" path="res://Scenes/CrystalVase.tscn" id="10_0fj1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmvex"]
@@ -1199,13 +1199,10 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_aqk2v")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlfv"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
 size = Vector2(10.75, 114.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7acu"]
-size = Vector2(1000, 11.9)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlfv"]
 
 [node name="World" type="Node2D" unique_id=848515882]
 
@@ -1238,22 +1235,6 @@ visibility_layer = 15
 tile_map_data = PackedByteArray("AAD2/wIAAAABABcAAAD2/wMAAAABABgAAAD2/wQAAAABABkAAAD2/wUAAAABABoAAAD2/wYAAAABABsAAAD3/wIAAAACABcAAAD3/wMAAAACABgAAAD3/wQAAAACABkAAAD3/wUAAAACABoAAAD3/wYAAAACABsAAAD4/wIAAAADABcAAAD4/wMAAAADABgAAAD4/wQAAAADABkAAAD4/wUAAAADABoAAAD4/wYAAAADABsAAADy//7/AAABABcAAADy////AAABABgAAADy/wAAAAABABkAAADy/wEAAAABABoAAADy/wIAAAABABsAAADz//7/AAACABcAAADz////AAACABgAAADz/wAAAAACABkAAADz/wEAAAACABoAAADz/wIAAAACABsAAAD0//7/AAADABcAAAD0////AAADABgAAAD0/wAAAAADABkAAAD0/wEAAAADABoAAAD0/wIAAAADABsAAAD6//z/AAABABcAAAD6//3/AAABABgAAAD6//7/AAABABkAAAD6////AAABABoAAAD6/wAAAAABABsAAAD7//z/AAACABcAAAD7//3/AAACABgAAAD7//7/AAACABkAAAD7////AAACABoAAAD7/wAAAAACABsAAAD8//z/AAADABcAAAD8//3/AAADABgAAAD8//7/AAADABkAAAD8////AAADABoAAAD8/wAAAAADABsAAAAAAPn/AAABABcAAAAAAPr/AAABABgAAAAAAPv/AAABABkAAAAAAPz/AAABABoAAAAAAP3/AAABABsAAAABAPn/AAACABcAAAABAPr/AAACABgAAAABAPv/AAACABkAAAABAPz/AAACABoAAAABAP3/AAACABsAAAACAPn/AAADABcAAAACAPr/AAADABgAAAACAPv/AAADABkAAAACAPz/AAADABoAAAACAP3/AAADABsAAAAFAPX/AAABABcAAAAFAPb/AAABABgAAAAFAPf/AAABABkAAAAFAPj/AAABABoAAAAFAPn/AAABABsAAAAGAPX/AAACABcAAAAGAPb/AAACABgAAAAGAPf/AAACABkAAAAGAPj/AAACABoAAAAGAPn/AAACABsAAAAHAPX/AAADABcAAAAHAPb/AAADABgAAAAHAPf/AAADABkAAAAHAPj/AAADABoAAAAHAPn/AAADABsAAADw//n/AAAPACAAAADw//r/AAAPACEAAADx//n/AAAQACAAAADx//r/AAABABAAAADy//n/AAARACAAAADy//r/AAAXABMAAADz//n/AAASACAAAADz//r/AAAEABAAAAD0//n/AAATACAAAAD0//r/AAATACEAAAD7/wUAAAAQAAwAAAD8/wUAAAARAAwAAAD9/wUAAAARAAwAAAD+/wUAAAARAAwAAAD//wUAAAARAAwAAAAAAAUAAAARAAwAAAABAAUAAAARAAwAAAACAAUAAAARAAwAAAADAAUAAAARAAwAAAAEAAUAAAARAAwAAAAFAAUAAAARAAwAAAAGAAUAAAARAAwAAAAHAAUAAAARAAwAAAAIAAUAAAARAAwAAAAJAAUAAAASAAwAAAD8/wQAAAARAAsAAAD9/wQAAAARAAsAAAD+/wQAAAARAAsAAAD//wQAAAARAAsAAAAAAAQAAAARAAsAAAABAAQAAAARAAsAAAACAAQAAAARAAsAAAADAAQAAAARAAsAAAAEAAQAAAARAAsAAAAFAAQAAAARAAsAAAAGAAQAAAARAAsAAAAHAAQAAAARAAsAAAAIAAQAAAARAAsAAAAJAAQAAAASAAsAAAD7/wQAAAAQAAsAAAA=")
 tile_set = SubResource("TileSet_nmvex")
 
-[node name="TriggerZone" type="Area2D" parent="." unique_id=115678559]
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("4_k7acu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerZone" unique_id=2055847283]
-position = Vector2(104, 46)
-shape = SubResource("RectangleShape2D_8rlfv")
-
-[node name="Label" type="Label" parent="TriggerZone" unique_id=218269740]
-offset_left = 73.0
-offset_top = 73.0
-offset_right = 117.0
-offset_bottom = 96.0
-text = "Not Enough Crystals!"
-
 [node name="Door" type="StaticBody2D" parent="." unique_id=621194733]
 collision_mask = 2
 
@@ -1265,6 +1246,22 @@ shape = SubResource("RectangleShape2D_aqk2v")
 position = Vector2(5.375, 19.5)
 scale = Vector2(0.75, 1.171875)
 texture = ExtResource("6_5v1tr")
+
+[node name="TriggerZone" type="Area2D" parent="Door" unique_id=115678559]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("4_k7acu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/TriggerZone" unique_id=2055847283]
+position = Vector2(104, 46)
+shape = SubResource("RectangleShape2D_8rlfv")
+
+[node name="Label" type="Label" parent="Door/TriggerZone" unique_id=218269740]
+offset_left = 73.0
+offset_top = 73.0
+offset_right = 117.0
+offset_bottom = 96.0
+text = "Not Enough Crystals!"
 
 [node name="ManaCrystal" parent="." unique_id=521529511 instance=ExtResource("7_0fj1v")]
 z_index = 2
@@ -1278,22 +1275,10 @@ position = Vector2(-216, -94)
 position = Vector2(35, 51)
 dialog = Array[String](["Welcome to the world of death and destruction.", "You will need to collect Mana Crystals to do various things here.", "The first of which will be opening this door here.", "Go find TWO Mana Crystals and come back here to move on.", "I've heard that they can be found in high places in this area.", "Or stuck to the bottom of platforms."])
 
-[node name="Reset" type="Area2D" parent="." unique_id=1830567698]
-collision_mask = 2
-script = ExtResource("8_k7acu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Reset" unique_id=1747140663]
-position = Vector2(268, 241.5)
-scale = Vector2(10, 10)
-shape = SubResource("RectangleShape2D_k7acu")
-
-[node name="Marker2D" type="Marker2D" parent="Reset" unique_id=587185077]
-z_index = -1
-position = Vector2(-2, 0)
+[node name="Reset" parent="." unique_id=1078819752 instance=ExtResource("9_0fj1v")]
 
 [node name="CrystalVase" parent="." unique_id=100340872 instance=ExtResource("10_0fj1v")]
 position = Vector2(-226, -126)
 
-[connection signal="body_entered" from="TriggerZone" to="TriggerZone" method="_on_body_entered"]
-[connection signal="body_exited" from="TriggerZone" to="TriggerZone" method="_on_body_exited"]
-[connection signal="body_entered" from="Reset" to="Reset" method="_on_body_entered"]
+[connection signal="body_entered" from="Door/TriggerZone" to="Door/TriggerZone" method="_on_body_entered"]
+[connection signal="body_exited" from="Door/TriggerZone" to="Door/TriggerZone" method="_on_body_exited"]
