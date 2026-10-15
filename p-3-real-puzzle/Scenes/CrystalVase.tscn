@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://c6cufy50rpw58"]
 
 [ext_resource type="Script" uid="uid://kkl8fgl2ss08" path="res://Code/area_2d.gd" id="1_sqnkd"]
-[ext_resource type="Texture2D" uid="uid://bjgvr5edfsfa3" path="res://Assets/Rusty Crate.png" id="2_id7js"]
+[ext_resource type="Texture2D" uid="uid://bpy4j7hf51y1d" path="res://Assets/Rusty Crate.png" id="2_id7js"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_id7js"]
 size = Vector2(30, 30)
 
 [node name="CrystalVase" type="Node2D" unique_id=100340872]
-position = Vector2(1, 0)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=82264156]
 collision_layer = 8

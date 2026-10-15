@@ -2,7 +2,9 @@ extends Node
 
 #var has_key: bool = false
 
-@onready var player: CharacterBody2D = $player
+signal crystalCollect
+
+@onready var player: CharacterBody2D = $World/player
 
 
 var manaCrystals: int
@@ -13,7 +15,13 @@ var inventory: Array[String]
 func _ready() -> void:
 	manaCrystals = 0
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	#if manaCrystals + 1:
+		#crystalCollect.emit()
+		pass
+
+func _on_mana_crystal_single_collect() -> void:
+	manaCrystals += 1
+	crystalCollect.emit()
+	print("Crystal Collect")
