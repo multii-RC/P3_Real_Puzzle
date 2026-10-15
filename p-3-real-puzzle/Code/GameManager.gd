@@ -4,8 +4,9 @@ extends Node
 
 signal crystals_changed(new_value)
 
-@onready var player: CharacterBody2D = $World/player
+@onready var player: CharacterBody2D = $player
 
+@onready var playerPosition: Marker2D = $player/Camera2D/PlayerPosition
 
 var manaCrystals: int
 

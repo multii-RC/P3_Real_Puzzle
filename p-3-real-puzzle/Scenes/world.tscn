@@ -1225,19 +1225,7 @@ offset_bottom = -83.0
 text = "Mana Crystals:"
 script = ExtResource("6_5ukr8")
 
-[node name="CrystalCollectedLabel" type="Node2D" parent="player/Camera2D" unique_id=817685760]
-script = ExtResource("4_0fj1v")
-
-[node name="CrystalCollected" type="Label" parent="player/Camera2D/CrystalCollectedLabel" unique_id=637272743]
-offset_left = -61.0
-offset_top = -17.0
-offset_right = 73.0
-offset_bottom = 6.0
-text = "Crystal Collected!"
-
-[node name="CrystalCollectTimer" type="Timer" parent="player/Camera2D/CrystalCollectedLabel" unique_id=400667056]
-wait_time = 2.0
-one_shot = true
+[node name="PlayerPosition" type="Marker2D" parent="player/Camera2D" unique_id=746592750]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=54550132]
 visibility_layer = 15
@@ -1265,4 +1253,18 @@ dialog = Array[String](["Welcome to the world of death and destruction.", "You w
 [node name="CrystalVase" parent="." unique_id=100340872 instance=ExtResource("10_0fj1v")]
 position = Vector2(-226, -126)
 
-[connection signal="timeout" from="player/Camera2D/CrystalCollectedLabel/CrystalCollectTimer" to="player/Camera2D/CrystalCollectedLabel" method="_on_crystal_collect_timer_timeout"]
+[node name="CrystalCollectedLabel" type="Node2D" parent="." unique_id=817685760]
+script = ExtResource("4_0fj1v")
+
+[node name="CrystalCollected" type="Label" parent="CrystalCollectedLabel" unique_id=637272743]
+offset_left = -61.0
+offset_top = -17.0
+offset_right = 73.0
+offset_bottom = 6.0
+text = "Crystal Collected!"
+
+[node name="CrystalCollectTimer" type="Timer" parent="CrystalCollectedLabel" unique_id=400667056]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="CrystalCollectedLabel/CrystalCollectTimer" to="CrystalCollectedLabel" method="_on_crystal_collect_timer_timeout"]
