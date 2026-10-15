@@ -5,10 +5,11 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	GameManager.crystals_changed.connect(update_total_crystals)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	manaCrystalsLabel.text = "Mana Crystals: " + str(GameManager.manaCrystals)
-		
+#func _process(delta: float) -> void:
+	#manaCrystalsLabel.text = "Mana Crystals: " + str(GameManager.manaCrystals)
+	
+func update_total_crystals(new_value: int):
+	manaCrystalsLabel.text = "Mana Crystals: " + str(new_value)

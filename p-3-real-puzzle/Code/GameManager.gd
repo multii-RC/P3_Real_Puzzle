@@ -2,7 +2,7 @@ extends Node
 
 #var has_key: bool = false
 
-signal crystalCollect
+signal crystals_changed(new_value)
 
 @onready var player: CharacterBody2D = $World/player
 
@@ -21,7 +21,11 @@ func _process(delta: float) -> void:
 		#crystalCollect.emit()
 		pass
 
-func _on_mana_crystal_single_collect() -> void:
-	manaCrystals += 1
-	crystalCollect.emit()
-	print("Crystal Collect")
+#func _on_mana_crystal_single_collect() -> void:
+	#manaCrystals += 1
+	#crystalCollect.emit()
+	#print("Crystal Collect")
+	
+func add_crystal(value):
+	manaCrystals += value
+	crystals_changed.emit(manaCrystals)
