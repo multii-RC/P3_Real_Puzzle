@@ -1,18 +1,15 @@
 [gd_scene format=4 uid="uid://d1nv81qnyx84k"]
 
-[ext_resource type="Script" uid="uid://bjlx6nm6qcu3c" path="res://Code/character_body_2d.gd" id="1_fo5ed"]
-[ext_resource type="Texture2D" uid="uid://bknslohhg1phg" path="res://Assets/icon.svg" id="2_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://wql0xxtgd1g" path="res://Scenes/player.tscn" id="1_k7acu"]
 [ext_resource type="Texture2D" uid="uid://bs0qpl23v3cg3" path="res://Assets/Ground_rocks.png" id="3_o06y3"]
-[ext_resource type="Script" uid="uid://cmmydm7spajwb" path="res://Code/crystal_collected_label.gd" id="4_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://brtxvp4p2h6ti" path="res://Scenes/door.tscn" id="5_5v1tr"]
-[ext_resource type="Script" uid="uid://c5nis6a3xadjw" path="res://Code/mana_crystals.gd" id="6_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://c3wlxtyq631js" path="res://Scenes/mana_crystal.tscn" id="7_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://cdva7gb5nyn8k" path="res://Scenes/dialog.tscn" id="7_o06y3"]
+[ext_resource type="PackedScene" uid="uid://deni4og01bf8r" path="res://Scenes/crystal_collected_label.tscn" id="8_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://r6e8x3riugpb" path="res://Scenes/reset.tscn" id="9_0fj1v"]
+[ext_resource type="Script" uid="uid://dojmm865n4ygo" path="res://Scenes/gate.gd" id="9_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://c6cufy50rpw58" path="res://Scenes/CrystalVase.tscn" id="10_0fj1v"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmvex"]
-size = Vector2(18, 20)
+[ext_resource type="Texture2D" uid="uid://dcbxs4r7jq1f4" path="res://Assets/portalRings1.png" id="10_ikia7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("3_o06y3")
@@ -1199,37 +1196,142 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_aqk2v")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmvex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yui6"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5t2i"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ngr"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn0ld"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgpy0"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2t4p"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pcbe"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axeuq"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cojt"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq1aw"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyn1s"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no8kt"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbk3s"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4fjy"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt3ps"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmc15"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt0r1"]
+atlas = ExtResource("10_ikia7")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmvex"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_7yui6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5t2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn0ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgpy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2t4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pcbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axeuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cojt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq1aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyn1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no8kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbk3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4fjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt3ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmc15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt0r1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="World" type="Node2D" unique_id=848515882]
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=930510142]
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("1_fo5ed")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=673841389]
-shape = SubResource("RectangleShape2D_nmvex")
-
-[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=57454246]
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_5ukr8")
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1595126555]
-zoom = Vector2(3, 3)
-
-[node name="ManaCrystals" type="Label" parent="player/Camera2D" unique_id=298330414]
-z_index = 1
-offset_left = -187.0
-offset_top = -106.0
-offset_right = -73.0
-offset_bottom = -83.0
-text = "Mana Crystals:"
-script = ExtResource("6_5ukr8")
-
-[node name="PlayerPosition" type="Marker2D" parent="player/Camera2D" unique_id=746592750]
+[node name="player" parent="." unique_id=264278443 instance=ExtResource("1_k7acu")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=54550132]
 visibility_layer = 15
-tile_map_data = PackedByteArray("AAD2/wIAAAAQAAsAAAD2/wMAAAAQAAwAAAD2/wYAAAABABsAAAD3/wIAAAARAAsAAAD3/wMAAAARAAwAAAD3/wYAAAACABsAAAD4/wIAAAASAAsAAAD4/wMAAAASAAwAAAD4/wYAAAADABsAAADy//7/AAAQAAsAAADy////AAAQAAwAAADy/wIAAAABABsAAADz//7/AAARAAsAAADz////AAARAAwAAADz/wIAAAACABsAAAD0//7/AAASAAsAAAD0////AAASAAwAAAD0/wIAAAADABsAAAD6//z/AAAQAAsAAAD6//3/AAAQAAwAAAD6/wAAAAABABsAAAD7//z/AAARAAsAAAD7//3/AAARAAwAAAD7/wAAAAACABsAAAD8//z/AAASAAsAAAD8//3/AAASAAwAAAD8/wAAAAADABsAAAAAAPn/AAAQAAsAAAAAAPr/AAAQAAwAAAAAAP3/AAABABsAAAABAPn/AAARAAsAAAABAPr/AAARAAwAAAABAP3/AAACABsAAAACAPn/AAASAAsAAAACAPr/AAASAAwAAAACAP3/AAADABsAAAAFAPX/AAAQAAsAAAAFAPb/AAAQAAwAAAAFAPn/AAABABsAAAAGAPX/AAARAAsAAAAGAPb/AAARAAwAAAAGAPn/AAACABsAAAAHAPX/AAASAAsAAAAHAPb/AAASAAwAAAAHAPn/AAADABsAAADw//n/AAAPACAAAADw//r/AAAPACEAAADx//n/AAAQAAsAAADx//r/AAABABAAAADy//n/AAARAAsAAADy//r/AAAXABMAAADz//n/AAASAAsAAADz//r/AAAEABAAAAD0//n/AAATACAAAAD0//r/AAATACEAAAD7/wUAAAAQAAwAAAD8/wUAAAARAAwAAAD9/wUAAAARAAwAAAD+/wUAAAARAAwAAAD//wUAAAARAAwAAAAAAAUAAAARAAwAAAABAAUAAAARAAwAAAACAAUAAAARAAwAAAADAAUAAAARAAwAAAAEAAUAAAARAAwAAAAFAAUAAAARAAwAAAAGAAUAAAARAAwAAAAHAAUAAAARAAwAAAAIAAUAAAARAAwAAAAJAAUAAAASAAwAAAD8/wQAAAARAAsAAAD9/wQAAAARAAsAAAD+/wQAAAARAAsAAAD//wQAAAARAAsAAAAAAAQAAAARAAsAAAABAAQAAAARAAsAAAACAAQAAAARAAsAAAADAAQAAAARAAsAAAAEAAQAAAARAAsAAAAFAAQAAAARAAsAAAAGAAQAAAARAAsAAAAHAAQAAAARAAsAAAAIAAQAAAARAAsAAAAJAAQAAAASAAsAAAD7/wQAAAAQAAsAAADx//7/AAAPAAsAAADx////AAAPAAwAAAD1//7/AAATAAsAAAD1////AAATAAwAAAD1/wIAAAAPAAsAAAD1/wMAAAAPAAwAAAD5/wIAAAATAAsAAAD5/wMAAAATAAwAAAD5//z/AAAPAAsAAAD5//3/AAAPAAwAAAD9//z/AAATAAsAAAD9//3/AAATAAwAAAD///n/AAAPAAsAAAD///r/AAAPAAwAAAADAPn/AAATAAsAAAADAPr/AAATAAwAAAAEAPX/AAAPAAsAAAAEAPb/AAAPAAwAAAAIAPX/AAATAAsAAAAIAPb/AAATAAwAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAAAQAAsAAAD2/wMAAAAQAAwAAAD2/wYAAAABABsAAAD3/wIAAAARAAsAAAD3/wMAAAARAAwAAAD4/wIAAAASAAsAAAD4/wMAAAASAAwAAADy//7/AAAQAAsAAADy////AAAQAAwAAADz//7/AAARAAsAAADz////AAARAAwAAAD0//7/AAASAAsAAAD0////AAASAAwAAAD6//z/AAAQAAsAAAD6//3/AAAQAAwAAAD7//z/AAARAAsAAAD7//3/AAARAAwAAAD8//z/AAASAAsAAAD8//3/AAASAAwAAAAAAPn/AAAQAAsAAAAAAPr/AAAQAAwAAAABAPn/AAARAAsAAAABAPr/AAARAAwAAAACAPn/AAASAAsAAAACAPr/AAASAAwAAAAFAPX/AAAQAAsAAAAFAPb/AAAQAAwAAAAGAPX/AAARAAsAAAAGAPb/AAARAAwAAAAHAPX/AAASAAsAAAAHAPb/AAASAAwAAADw//n/AAAPACAAAADw//r/AAAPACEAAADx//n/AAAQAAsAAADx//r/AAABABAAAADy//n/AAARAAsAAADy//r/AAAXABMAAADz//n/AAASAAsAAADz//r/AAAEABAAAAD0//n/AAATACAAAAD0//r/AAATACEAAAD7/wUAAAAQAAwAAAD8/wUAAAARAAwAAAD9/wUAAAARAAwAAAD+/wUAAAARAAwAAAD//wUAAAARAAwAAAAAAAUAAAARAAwAAAABAAUAAAARAAwAAAACAAUAAAARAAwAAAADAAUAAAARAAwAAAAEAAUAAAARAAwAAAAFAAUAAAARAAwAAAAGAAUAAAARAAwAAAAHAAUAAAARAAwAAAAIAAUAAAARAAwAAAAJAAUAAAASAAwAAAD8/wQAAAARAAsAAAD9/wQAAAARAAsAAAD+/wQAAAARAAsAAAD//wQAAAARAAsAAAAAAAQAAAARAAsAAAABAAQAAAARAAsAAAACAAQAAAARAAsAAAADAAQAAAARAAsAAAAEAAQAAAARAAsAAAAFAAQAAAARAAsAAAAGAAQAAAARAAsAAAAHAAQAAAARAAsAAAAIAAQAAAARAAsAAAAJAAQAAAASAAsAAAD7/wQAAAAQAAsAAADx//7/AAAPAAsAAADx////AAAPAAwAAAD1//7/AAATAAsAAAD1////AAATAAwAAAD1/wIAAAAPAAsAAAD1/wMAAAAPAAwAAAD5/wIAAAATAAsAAAD5/wMAAAATAAwAAAD5//z/AAAPAAsAAAD5//3/AAAPAAwAAAD9//z/AAATAAsAAAD9//3/AAATAAwAAAD///n/AAAPAAsAAAD///r/AAAPAAwAAAADAPn/AAATAAsAAAADAPr/AAATAAwAAAAEAPX/AAAPAAsAAAAEAPb/AAAPAAwAAAAIAPX/AAATAAsAAAAIAPb/AAATAAwAAAANAAQAAAAPAAsAAAANAAUAAAAPAAwAAAAOAAQAAAAQAAsAAAAOAAUAAAAQAAwAAAAPAAQAAAARAAsAAAAPAAUAAAARAAwAAAAQAAQAAAARAAsAAAAQAAUAAAARAAwAAAARAAQAAAASAAsAAAARAAUAAAASAAwAAAASAAQAAAATAAsAAAASAAUAAAATAAwAAAA=")
 tile_set = SubResource("TileSet_nmvex")
 
 [node name="Door" parent="." unique_id=134421877 instance=ExtResource("5_5v1tr")]
@@ -1253,18 +1355,18 @@ dialog = Array[String](["Welcome to the world of death and destruction.", "You w
 [node name="CrystalVase" parent="." unique_id=100340872 instance=ExtResource("10_0fj1v")]
 position = Vector2(-226, -126)
 
-[node name="CrystalCollectedLabel" type="Node2D" parent="." unique_id=817685760]
-script = ExtResource("4_0fj1v")
+[node name="CrystalCollectedLabel" parent="." unique_id=1328133768 instance=ExtResource("8_5v1tr")]
 
-[node name="CrystalCollected" type="Label" parent="CrystalCollectedLabel" unique_id=637272743]
-offset_left = -61.0
-offset_top = -17.0
-offset_right = 73.0
-offset_bottom = 6.0
-text = "Crystal Collected!"
+[node name="Gate" type="Area2D" parent="." unique_id=1006296502]
+script = ExtResource("9_5v1tr")
 
-[node name="CrystalCollectTimer" type="Timer" parent="CrystalCollectedLabel" unique_id=400667056]
-wait_time = 2.0
-one_shot = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate" unique_id=274308074]
+position = Vector2(258, 41)
+shape = SubResource("CircleShape2D_nmvex")
 
-[connection signal="timeout" from="CrystalCollectedLabel/CrystalCollectTimer" to="CrystalCollectedLabel" method="_on_crystal_collect_timer_timeout"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gate" unique_id=1862807777]
+position = Vector2(258, 39)
+sprite_frames = SubResource("SpriteFrames_nmvex")
+frame = 10
+frame_progress = 0.9583609
+speed_scale = 10.0
