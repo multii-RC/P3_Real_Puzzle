@@ -12,6 +12,8 @@ var is_interactable: bool
 @onready var acceptButton: Button = $Accept
 @onready var declineButton: Button = $Decline
 
+@export var
+
 func _ready() -> void:
 	# initialize all variables
 	current_line = -1  # I'm using -1 to indicate not started, since index 0 is the first line
@@ -24,7 +26,11 @@ func _input(event: InputEvent) -> void:
 	# Skip if not interactable or not visible
 	if not is_interactable:
 		return
-	if dialog: [4]
+	if current_line == 4:
+		acceptButton.visible = true
+		declineButton.visible = true
+
+
 		
 	# If “action” is just pressed	
 	if Input.is_action_just_pressed("Interact"): # Remember to set up action in Input Map
@@ -59,3 +65,5 @@ func _on_body_exited(body: Node2D) -> void:
 	current_line = -1
 	dialog_label.text = ""
 	dialog_label.visible = false
+	acceptButton.visible = false
+	declineButton.visible = false
