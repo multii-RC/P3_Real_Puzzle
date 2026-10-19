@@ -80,3 +80,4 @@ func _on_decline_pressed() -> void:
 	dialog_label.visible = false
 	acceptButton.visible = false
 	declineButton.visible = false
+	current_line = -1
