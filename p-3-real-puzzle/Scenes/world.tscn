@@ -7,11 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cdva7gb5nyn8k" path="res://Scenes/dialog.tscn" id="7_o06y3"]
 [ext_resource type="PackedScene" uid="uid://deni4og01bf8r" path="res://Scenes/crystal_collected_label.tscn" id="8_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://r6e8x3riugpb" path="res://Scenes/reset.tscn" id="9_0fj1v"]
-[ext_resource type="Script" uid="uid://dojmm865n4ygo" path="res://Scenes/gate.gd" id="9_5v1tr"]
+[ext_resource type="PackedScene" uid="uid://4qk3lh15s0hu" path="res://Scenes/gate.tscn" id="9_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://c6cufy50rpw58" path="res://Scenes/CrystalVase.tscn" id="10_0fj1v"]
-[ext_resource type="Texture2D" uid="uid://dcbxs4r7jq1f4" path="res://Assets/portalRings1.png" id="10_ikia7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5v1tr"]
 texture = ExtResource("3_o06y3")
 1:0/0 = 0
 2:0/0 = 0
@@ -1194,136 +1193,7 @@ texture = ExtResource("3_o06y3")
 [sub_resource type="TileSet" id="TileSet_nmvex"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
-sources/0 = SubResource("TileSetAtlasSource_aqk2v")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nmvex"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7yui6"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5t2i"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e0ngr"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kn0ld"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hgpy0"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t2t4p"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0pcbe"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_axeuq"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1cojt"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yq1aw"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pyn1s"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_no8kt"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xbk3s"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4fjy"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pt3ps"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmc15"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(96, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dt0r1"]
-atlas = ExtResource("10_ikia7")
-region = Rect2(0, 128, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nmvex"]
-animations = [{
-"frames": [{
-"duration": 5.0,
-"texture": SubResource("AtlasTexture_7yui6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c5t2i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e0ngr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kn0ld")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hgpy0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t2t4p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0pcbe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_axeuq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1cojt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yq1aw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pyn1s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_no8kt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xbk3s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i4fjy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pt3ps")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hmc15")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dt0r1")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+sources/0 = SubResource("TileSetAtlasSource_5v1tr")
 
 [node name="World" type="Node2D" unique_id=848515882]
 
@@ -1357,16 +1227,9 @@ position = Vector2(-226, -126)
 
 [node name="CrystalCollectedLabel" parent="." unique_id=1328133768 instance=ExtResource("8_5v1tr")]
 
-[node name="Gate" type="Area2D" parent="." unique_id=1006296502]
-script = ExtResource("9_5v1tr")
+[node name="Gate" parent="." unique_id=1769824833 instance=ExtResource("9_5v1tr")]
+position = Vector2(-3, 9)
+collision_layer = 8
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate" unique_id=274308074]
-position = Vector2(258, 41)
-shape = SubResource("CircleShape2D_nmvex")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gate" unique_id=1862807777]
-position = Vector2(258, 39)
-sprite_frames = SubResource("SpriteFrames_nmvex")
-frame = 10
-frame_progress = 0.9583609
-speed_scale = 10.0
+[connection signal="body_exited" from="Gate" to="Gate" method="_on_body_exited"]

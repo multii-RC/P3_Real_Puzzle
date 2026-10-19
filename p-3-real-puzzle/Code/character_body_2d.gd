@@ -25,3 +25,7 @@ func _physics_process(delta: float) -> void:
 	#velocity = Input.get_vector("left","right","up","down") * delta * SPEED * 50
 	#
 	move_and_slide()
+
+
+func _on_contract_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

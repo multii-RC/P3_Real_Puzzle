@@ -18,14 +18,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#if manaCrystals + 1:
-		#crystalCollect.emit()
-		pass
-
-#func _on_mana_crystal_single_collect() -> void:
-	#manaCrystals += 1
-	#crystalCollect.emit()
-	#print("Crystal Collect")
+	pass
 	
 func add_crystal(value):
 	manaCrystals += value
