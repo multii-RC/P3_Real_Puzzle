@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://deni4og01bf8r" path="res://Scenes/crystal_collected_label.tscn" id="8_62f1r"]
 [ext_resource type="PackedScene" uid="uid://4qk3lh15s0hu" path="res://Scenes/gate.tscn" id="9_1je60"]
 [ext_resource type="PackedScene" uid="uid://58qekv2t83yl" path="res://Scenes/contract.tscn" id="10_62f1r"]
-[ext_resource type="Script" uid="uid://dduq47j16fqln" path="res://Code/contract.gd" id="10_au75x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4u3k"]
 texture = ExtResource("2_n3cqh")
@@ -1232,7 +1231,8 @@ collision_mask = 2
 
 [node name="Contract" parent="." unique_id=906542960 instance=ExtResource("10_62f1r")]
 position = Vector2(-439, -46)
-script = ExtResource("10_au75x")
 dialog = Array[String](["Welcome to your first Contract!", "These will help you progress by trading crystals for rewards.", "But, there is always a cost.", "You can gain 3 crystal, at the cost of 1 and a quarter of your speed.", "Do you accept?"])
+add_value = 3
+cost_value = 1
 
 [connection signal="body_exited" from="Gate" to="Gate" method="_on_body_exited"]

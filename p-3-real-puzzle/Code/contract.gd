@@ -12,7 +12,8 @@ var is_interactable: bool
 @onready var acceptButton: Button = $Accept
 @onready var declineButton: Button = $Decline
 
-@export var
+@export var add_value: int
+@export var cost_value: int
 
 func _ready() -> void:
 	# initialize all variables
@@ -64,6 +65,18 @@ func _on_body_exited(body: Node2D) -> void:
 	is_interactable = false
 	current_line = -1
 	dialog_label.text = ""
+	dialog_label.visible = false
+	acceptButton.visible = false
+	declineButton.visible = false
+	
+	
+
+
+func _on_accept_pressed() -> void:
+	GameManager.add_crystal(add_value - cost_value)
+	queue_free()
+
+func _on_decline_pressed() -> void:
 	dialog_label.visible = false
 	acceptButton.visible = false
 	declineButton.visible = false
