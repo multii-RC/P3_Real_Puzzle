@@ -1206,7 +1206,7 @@ tile_map_data = PackedByteArray("AAD2/wYAAAAQAAwAAAD7/wUAAAAQAAwAAAD8/wUAAAARAAw
 tile_set = SubResource("TileSet_70df5")
 
 [node name="Door" parent="." unique_id=531658417 instance=ExtResource("3_jriq2")]
-position = Vector2(153, 6)
+position = Vector2(153, 10)
 doorCost = 3
 
 [node name="ManaCrystal" parent="." unique_id=521529511 instance=ExtResource("4_ehjmi")]
@@ -1215,7 +1215,7 @@ position = Vector2(-152, -201)
 
 [node name="Dialog" parent="." unique_id=389799286 instance=ExtResource("5_70df5")]
 position = Vector2(35, 51)
-dialog = Array[String](["Welcome to the world of death and destruction.", "You will need to collect Mana Crystals to do various things here.", "The first of which will be opening this door here.", "Go find TWO Mana Crystals and come back here to move on.", "I've heard that they can be found in high places in this area.", "Or stuck to the bottom of platforms."])
+dialog = Array[String](["Good job on the first level!", "Now we will learn about contracts!", "Go out and find them. They are hidden throughout this world.", "Prepare by collecting more crystals."])
 
 [node name="Reset" parent="." unique_id=1078819752 instance=ExtResource("6_ejprb")]
 

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
-size = Vector2(10.75, 114.5)
+size = Vector2(10.75, 419.25)
 
 [node name="TriggerZone" type="Area2D" unique_id=531658417]
 collision_layer = 8
@@ -27,10 +27,11 @@ shape = SubResource("RectangleShape2D_8rlfv")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1407084845]
+position = Vector2(0, -152.375)
 shape = SubResource("RectangleShape2D_aqk2v")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door/CollisionShape2D" unique_id=2012723194]
-position = Vector2(7, 19)
+position = Vector2(8, 169.375)
 scale = Vector2(0.75, 1.171875)
 texture = ExtResource("1_p0e35")
 
