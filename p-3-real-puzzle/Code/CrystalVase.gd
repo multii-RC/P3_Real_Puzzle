@@ -1,18 +1,12 @@
 extends Area2D
 
 var isInteractable = false
-
 @onready var vaseLabel: Label = $Label
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	vaseLabel.visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+#Give a hint on how to collect, and allow interaction
 func _on_body_entered(body: Node2D) -> void:
 	isInteractable = true
 	vaseLabel.visible = true
@@ -22,6 +16,7 @@ func _input(event: InputEvent) -> void:
 	if not isInteractable:
 		return
 	
+	#Make the player press "E" to collect, destroy vase after collection
 	if Input.is_action_just_pressed("Interact"):
 		GameManager.add_crystal(1)
 		queue_free()

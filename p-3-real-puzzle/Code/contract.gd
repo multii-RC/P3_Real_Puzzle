@@ -9,9 +9,11 @@ var current_line: int
 @onready var dialog_label :Label = $Label
 var is_interactable: bool
 
+#Contract decision buttons
 @onready var acceptButton: Button = $Accept
 @onready var declineButton: Button = $Decline
 
+#Contract Outcome variables
 @export var add_value: int
 @export var cost_value: int
 @export var speed_change: int
@@ -30,14 +32,13 @@ func _input(event: InputEvent) -> void:
 	# Skip if not interactable or not visible
 	if not is_interactable:
 		return
+	#Show decision buttons on final line
 	if current_line == 4:
 		acceptButton.visible = true
 		declineButton.visible = true
-
-
 		
 	# If “action” is just pressed	
-	if Input.is_action_just_pressed("Interact"): # Remember to set up action in Input Map
+	if Input.is_action_just_pressed("Interact"): 
 		# If dialog hasn't started, initialize it
 		if current_line == -1:
 			current_line = 0
@@ -55,26 +56,20 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	# Add a player check here using the name or other ways like groups
-	# if body.name == "Player":
 	is_interactable = true
-	dialog_label.text = "Press E to continue" # Prompt
+	dialog_label.text = "Press E to continue" # intial Prompt
 	dialog_label.visible = true
 	
 	
 func _on_body_exited(body: Node2D) -> void:
-	# Add a player check here using the name or other ways like groups
-	# if body.name == "Player":
 	is_interactable = false
 	current_line = -1
 	dialog_label.text = ""
 	dialog_label.visible = false
 	acceptButton.visible = false
 	declineButton.visible = false
-	
-	
 
-
+#Send the reward values to gamemanger and make the contract disappear if accepted
 func _on_accept_pressed() -> void:
 	print(GameManager.manaCrystals)
 	if GameManager.manaCrystals >= cost_value:
@@ -84,6 +79,7 @@ func _on_accept_pressed() -> void:
 	else:
 		return
 
+#Reset dialogue if declined
 func _on_decline_pressed() -> void:
 	dialog_label.visible = false
 	acceptButton.visible = false

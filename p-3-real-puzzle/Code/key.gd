@@ -1,20 +1,8 @@
 extends Area2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+#add 1 crystal when collecting them on the map
 func _on_body_entered(body: Node2D) -> void:
 	print("key collected")
-	#GameManager.has_key = true
-	
-	#GameManager.inventory.append(name)
-	GameManager.add_crystal(1)
 
+	GameManager.add_crystal(1)
 	queue_free()

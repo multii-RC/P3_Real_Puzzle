@@ -3,17 +3,13 @@ extends Area2D
 #want to be able to set cost values for new doors if I add them
 @export var doorCost: int
 
+#door popup to tell the player the cost, when next to it
 @onready var doorLabel: Label = $Label
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	doorLabel.visible = false
 	doorLabel.text = "You need " + str(doorCost) + " Crystals!"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-#Going through door
+#Going through door, checks cost, if not enough, enables the popup
 func _on_body_entered(body: Node2D) -> void:
 	print("player entered")
 	
@@ -25,7 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Not Enough Mana Crystals, you need " + str(doorCost))
 		doorLabel.visible = true
 		return
-
 			
+#popup goes away when not next to door
 func _on_body_exited(body: Node2D) -> void:
 	doorLabel.visible = false

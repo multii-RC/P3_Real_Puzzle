@@ -40,16 +40,12 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	# Add a player check here using the name or other ways like groups
-	# if body.name == "Player":
 	is_interactable = true
 	dialog_label.text = "Press E to continue" # Prompt
 	dialog_label.visible = true
 	
 	
 func _on_body_exited(body: Node2D) -> void:
-	# Add a player check here using the name or other ways like groups
-	# if body.name == "Player":
 	is_interactable = false
 	current_line = -1
 	dialog_label.text = ""
