@@ -14,6 +14,9 @@ var is_interactable: bool
 
 @export var add_value: int
 @export var cost_value: int
+@export var speed_change: int
+
+
 
 func _ready() -> void:
 	# initialize all variables
@@ -76,6 +79,7 @@ func _on_accept_pressed() -> void:
 	print(GameManager.manaCrystals)
 	if GameManager.manaCrystals >= cost_value:
 		GameManager.add_crystal(add_value - cost_value)
+		GameManager.player_stat_change(speed_change)
 		queue_free()
 	else:
 		return

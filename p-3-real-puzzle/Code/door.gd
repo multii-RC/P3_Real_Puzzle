@@ -19,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if GameManager.manaCrystals >= doorCost:
 		$Door.queue_free()
-		GameManager.manaCrystals -= doorCost
+		GameManager.add_crystal(-doorCost)
 		queue_free()
 	else:
 		print("Not Enough Mana Crystals, you need " + str(doorCost))

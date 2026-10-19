@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brtxvp4p2h6ti"]
 
 [ext_resource type="Texture2D" uid="uid://bmj5v28f28oqh" path="res://Assets/door.png" id="1_p0e35"]
-[ext_resource type="Script" uid="uid://bdf73mrht5qgp" path="res://Code/trigger_zone.gd" id="2_fahql"]
+[ext_resource type="Script" uid="uid://bdf73mrht5qgp" path="res://Code/door.gd" id="2_fahql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlfv"]
 

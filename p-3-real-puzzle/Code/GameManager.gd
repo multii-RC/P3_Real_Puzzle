@@ -1,25 +1,21 @@
 extends Node
 
-#var has_key: bool = false
-
+#Updating crystal totals
 signal crystals_changed(manaCrystals)
-
-@onready var player: CharacterBody2D = $player
-
-@onready var playerPosition: Marker2D = $player/Camera2D/PlayerPosition
-
 var manaCrystals: int
 
-var inventory: Array[String]
+#updating stats
+signal player_speed_changed(stat_change)
+var stat_change: int
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	manaCrystals = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
+#every crystal update goes through this
 func add_crystal(value):
 	manaCrystals += value
 	crystals_changed.emit(manaCrystals)
+	
+func player_stat_change(stat_change):
+	player_speed_changed.emit(stat_change)
+	

@@ -1234,5 +1234,6 @@ position = Vector2(-439, -46)
 dialog = Array[String](["Welcome to your first Contract!", "These will help you progress by trading crystals for rewards.", "But, there is always a cost.", "You can gain 3 crystal, at the cost of 2 and a quarter of your speed.", "Do you accept?"])
 add_value = 3
 cost_value = 2
+speed_change = 2
 
 [connection signal="body_exited" from="Gate" to="Gate" method="_on_body_exited"]

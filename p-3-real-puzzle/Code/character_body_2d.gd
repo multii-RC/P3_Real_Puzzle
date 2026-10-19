@@ -4,7 +4,8 @@ extends CharacterBody2D
 @export var SPEED = 150.0
 @export var JUMP_VELOCITY = -350.0
 
-
+func _ready() -> void:
+	GameManager.player_speed_changed.connect(speed_change)
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -19,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		print(SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -27,5 +29,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_contract_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func speed_change(new_value: int):
+	SPEED -= SPEED * (new_value * .1)
+	
