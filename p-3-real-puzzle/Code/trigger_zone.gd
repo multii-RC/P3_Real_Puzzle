@@ -18,22 +18,14 @@ func _on_body_entered(body: Node2D) -> void:
 	print("player entered")
 	
 	if GameManager.manaCrystals >= doorCost:
-		queue_free()
 		$Door.queue_free()
 		GameManager.manaCrystals -= doorCost
+		queue_free()
 	else:
 		print("Not Enough Mana Crystals, you need " + str(doorCost))
 		doorLabel.visible = true
 		return
-	
-	#for item in ["BlueKey", "RedKey"]:
-		#print("Checking" + item)
-		#if (item not in GameManager.inventory):
-			#print(item + "not in inventory, end execution")
-			#return
-		#else: 
-			#print(item + "in inventory")
-			
+
 			
 func _on_body_exited(body: Node2D) -> void:
 	doorLabel.visible = false

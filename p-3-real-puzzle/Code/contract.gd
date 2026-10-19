@@ -73,8 +73,12 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _on_accept_pressed() -> void:
-	GameManager.add_crystal(add_value - cost_value)
-	queue_free()
+	print(GameManager.manaCrystals)
+	if GameManager.manaCrystals >= cost_value:
+		GameManager.add_crystal(add_value - cost_value)
+		queue_free()
+	else:
+		return
 
 func _on_decline_pressed() -> void:
 	dialog_label.visible = false

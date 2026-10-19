@@ -12,4 +12,4 @@ func _ready() -> void:
 	#manaCrystalsLabel.text = "Mana Crystals: " + str(GameManager.manaCrystals)
 	
 func update_total_crystals(new_value: int):
-	manaCrystalsLabel.text = "Mana Crystals: " + str(new_value)
+	manaCrystalsLabel.text = "Mana Crystals: " + str(GameManager.manaCrystals)

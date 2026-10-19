@@ -2,7 +2,7 @@ extends Node
 
 #var has_key: bool = false
 
-signal crystals_changed(new_value)
+signal crystals_changed(manaCrystals)
 
 @onready var player: CharacterBody2D = $player
 
