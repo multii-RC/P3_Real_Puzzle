@@ -1230,7 +1230,8 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="Contract2" parent="." unique_id=1837418076 instance=ExtResource("5_70df5")]
-position = Vector2(35, 51)
+position = Vector2(-441, -49)
 script = ExtResource("10_au75x")
+dialog = Array[String](["Welcome to your first contract!", "You may spend crystals to gain buffs!", "Yet, they may come at a cost. So be careful of what you accept.", "If you choose to accept this contract, you will gain 3 crystals, at the cost of 1 and a quarter of your speed.", "Do you accept?"])
 
 [connection signal="body_exited" from="Gate" to="Gate" method="_on_body_exited"]

@@ -9,18 +9,23 @@ var current_line: int
 @onready var dialog_label :Label = $Label
 var is_interactable: bool
 
+@onready var acceptButton: Button = $Accept
+@onready var declineButton: Button = $Decline
 
 func _ready() -> void:
 	# initialize all variables
 	current_line = -1  # I'm using -1 to indicate not started, since index 0 is the first line
 	dialog_label.visible = false
 	is_interactable = false
+	acceptButton.visible = false
+	declineButton.visible = false
 
 func _input(event: InputEvent) -> void:
 	# Skip if not interactable or not visible
 	if not is_interactable:
 		return
-	
+	if dialog: [4]
+		
 	# If “action” is just pressed	
 	if Input.is_action_just_pressed("Interact"): # Remember to set up action in Input Map
 		# If dialog hasn't started, initialize it
